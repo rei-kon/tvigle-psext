@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tvigle applications</title>
+	<meta content="text/html; Charset=utf-8" http-equiv="Content-Type">
+	<script type="text/javascript">
+		var webmaf =
+		{
+			psButtonTitle: "Выйти из сайта?",
+			psButtonText: "Нуу для этого нужно удерживать кнопку \"PS\" до победы. До нашей победы.",
+			networkDisconnectedTitle: "Отключена сеть.",
+			networkDisconnectedText: "Пожалуйста переподключите PS3 к сети",
+			geoAccess:"Права на вещание этого видео в Интернете пренадлежат компании Tvigle Media.&lt;br /&gt;&lt;br /&gt;Видео размещано легально с соблюдением всех авторских прав. Часть видео библиотеки может быть недоступно за пределами России из-за территориальных ограничений на прова.&lt;br /&gt;&lt;br /&gt;Приносим свои извинения.&lt;br /&gt;&lt;br /&gt;Sorry, content is not provided for this geo zone.",
+			ConnectError:"Произошла ошибка при подключению к серверу.&lt;br /&gt;&lt;br /&gt;попробуйте позже. &lt;br /&gt;&lt;br /&gt;Приносим свои извинения.",
+			sAdvUrl: 'http://psext/cgi-bin/erle.cgi?',
+			sAdvDomain:'psext'
+		};
+	</script>
+	
+	<script src="http://psext.ctv.tvigle.ru/js/lib/json2.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/lib/md5.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/lib/func.js" type="text/javascript"></script>
+
+	<link type="text/css" rel="stylesheet" href="css/fonts.css">
+	<link type="text/css" rel="stylesheet" href="css/normalize.css">
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+	
+<!--	
+	<script src="http://psext.ctv.tvigle.ru/js/common/class.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/common/renderer.js" type="text/javascript"></script>
+
+	<script src="http://psext.ctv.tvigle.ru/js/events/event.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/events/selectevent.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/events/focusevents.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/events/viewevents.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/events/keyevent.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/events/textchange.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/events/playrevents.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/events/networkstatechange.js" type="text/javascript"></script>
+
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/widget.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/container.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/viewcontainer.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/label.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/button.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/image.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/view.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/list.js" type="text/javascript"></script>
+	
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/horizontalcarousel.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/grid.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/htmlviewer.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/textarea.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/keyboard.js" type="text/javascript"></script>
+
+	<script src="http://psext.ctv.tvigle.ru/js/drive/webmaf.js" type="text/javascript"></script>	
+			
+	<script src="http://psext.ctv.tvigle.ru/js/layouts/layout.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/layouts/sd576.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/layouts/hd720.js" type="text/javascript"></script>
+
+	<script src="http://psext.ctv.tvigle.ru/js/common/application.js" type="text/javascript"></script>
+	
+	<script src="http://psext.ctv.tvigle.ru/js/models/model.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/models/app.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/models/filters.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/models/filters_data.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/models/video_list.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/models/video.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/models/adriver.js" type="text/javascript"></script>
+	
+	<script src="http://psext.ctv.tvigle.ru/js/views/dialog.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/views/about.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/views/tools.js" type="text/javascript"></script>
+	
+	<script src="http://psext.ctv.tvigle.ru/js/views/adv.js" type="text/javascript"></script>		
+	
+	<script src="http://psext.ctv.tvigle.ru/js/tvigle.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/drive/html5.js" type="text/javascript"></script>
+	
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/adv.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/timelinebar.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/playrcontrols.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/widgets/player.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/views/player.js" type="text/javascript"></script>
+	
+	<script src="http://psext.ctv.tvigle.ru/js/views/app.js" type="text/javascript"></script>
+	<script src="http://psext.ctv.tvigle.ru/js/views/applist.js" type="text/javascript"></script>
+			
+	<script src="http://psext.ctv.tvigle.ru/js/main.js" type="text/javascript"></script>
+-->
+	
+</head>
+<body>
+<div class="container hd720 active focus container_main html5" id="app">
+	
+	<div class="header-inner">
+		<div class="btns-set">
+			<div class="btn"><span>Популярные коллекции</span></div>
+			<div class="btn active"><span>Все коллекции</span></div>
+			<div class="btn black"><span><span class="orange">4</span> из 42</span></div>
+		</div>
+		<div class="logo-box">
+			<span class="logo small"></span>
+			<img class="channel logo" src="http://photo.tvigle.ru/resource/rf/cnl/670257/kzlg.png">
+			<i class="icon tr"></i>
+		</div>
+		<div class="back">
+			<span class="label ps-btn circle"><i></i>Назад</span>
+		</div>		
+	</div>
+
+	<div class="collection-title-box">
+		Коллекция
+		<span class="name">Путешествия после наводнений</span>
+		181 видео	
+	</div>
+
+	<div class="container viewcontainer view list horizontallist active focus">
+		<div id="main" class="container viewcontainer active focus">
+
+			<div id="slider" class="container viewcontainer view list verticallist slider inner">
+				<div id="AppList" class="container viewcontainer view list horizontallist">
+					<div id="AppListPipContainer" class="container horizontalCarouselPipContainer">
+
+						<div id="AppListPipsLeftArrow" class="container horizontalCarouselLeftArrow first one">
+							<div class="container viewcontainer image">
+								<img class="container image" src="http://photo.tvigle.ru/resource/rf/cnl_flt/46/bg.png">
+							</div>
+							<div class="container viewcontainer legend">
+								<span class="label ps-btn x"><i></i>Название видео</span>
+								<span class="label ps-btn square"><i></i>Инфо</span>
+							</div>
+						</div> <!-- .one.first -->
+
+						<div id="AppListcenter" class="container horizontalCarouselCenter one center active">
+							<div class="container viewcontainer image">
+								<img class="container image" src="http://photo.tvigle.ru/resource/rf/cnl_flt/70/bg.png">
+							</div>
+							<div class="container viewcontainer legend">
+								<span class="label ps-btn x"><i></i>Название видео с иллюстрации</span>
+								<span class="label ps-btn square"><i></i>Инфо</span>
+							</div>
+							<div class="info-box">
+								<div class="text">
+									16 сезон популярного американского мультсериала. В основе сюжета лежат приключения четырех мальчиков и их друзей, живущих в маленьком городке Саус-Парк, штат Колорадо, и даже еще больше текста, на всякий случай
+								</div>
+								<div class="cover">
+									<div class="title">На обложке:</div>
+									<div class="one-sm clearChlds focus">
+										<div class="image">
+											<img src="img/content/img-1.jpg" alt="">
+										</div>
+										<div class="text">
+											Каникулы строгого режима<br>
+											Фильм второй<br>
+											121 минута<br>
+											Комедия
+										</div>
+										<div class="legend">
+											<span class="label ps-btn x"><i></i>Смотреть</span>
+											<span class="label ps-btn square"><i></i>Инфо</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> <!-- .one.center -->
+
+						<div class="container horizontalCarouselPip"></div>
+						<div class="container horizontalCarouselPip"></div>
+						<div class="container horizontalCarouselPip"></div>
+						<div class="container horizontalCarouselPip"></div>
+						<div class="container horizontalCarouselPip"></div>
+						<div class="container horizontalCarouselPip"></div>
+
+						<div id="AppListPipsRightArrow" class="container viewcontainer horizontalCarouselRightArrow one last">
+							<div class="container viewcontainer image">
+								<img class="container image" src="http://photo.tvigle.ru/resource/rf/cnl_flt/66/bg.png">
+							</div>
+							<div class="container viewcontainer legend">
+								<span class="label ps-btn x"><i></i>Название этого видео</span>
+								<span class="label ps-btn square"><i></i>Инфо</span>
+							</div>
+						</div> <!-- .one.last -->
+
+					</div> <!-- #AppListPipContainer -->
+				</div> <!-- #AppList -->
+
+				<span class="label prev icon shaded"></span>
+				<span class="label next icon shaded"></span>
+			</div> <!-- #slider -->
+
+			<div class="video-items">
+
+				<div class="one clearChlds focus">
+					<div class="image">
+						<img src="img/content/img-1.jpg" alt="">
+					</div>
+					<div class="text">
+						Каникулы строгого режима<br>
+						Фильм второй<br>
+						121 минута<br>
+						Комедия
+					</div>
+					<div class="legend">
+						<span class="label ps-btn x"><i></i>Смотреть</span>
+						<span class="label ps-btn square"><i></i>Инфо</span>
+					</div>
+				</div>
+				
+				<div class="one clearChlds">
+					<div class="image">
+						<img src="img/content/img-2.jpg" alt="">
+					</div>
+					<div class="text">
+						Ирония судьбы<br>
+						Продолжение<br>
+						121 минута<br>
+						Комедия
+					</div>
+					<div class="legend">
+						<span class="label ps-btn x"><i></i>Смотреть</span>
+						<span class="label ps-btn square"><i></i>Инфо</span>
+					</div>
+				</div>
+
+				<div class="one clearChlds">
+					<div class="image">
+						<img src="img/content/img-1.jpg" alt="">
+					</div>
+					<div class="text">
+						Хоттабыч<br>
+						121 минута<br>
+						Комедия
+					</div>
+					<div class="legend">
+						<span class="label ps-btn x"><i></i>Смотреть</span>
+						<span class="label ps-btn square"><i></i>Инфо</span>
+					</div>
+				</div>
+
+				<div class="one clearChlds">
+					<div class="image">
+						<img src="img/content/img-1.jpg" alt="">
+					</div>
+					<div class="text">
+						Особенности национальной рыбалки<br>
+						121 минута<br>
+						Комедия
+					</div>
+					<div class="legend">
+						<span class="label ps-btn x"><i></i>Смотреть</span>
+						<span class="label ps-btn square"><i></i>Инфо</span>
+					</div>
+				</div>
+
+				<div class="one clearChlds">
+					<div class="image">
+						<img src="img/content/img-2.jpg" alt="">
+					</div>
+					<div class="text">
+						Мама, не горюй<br>
+						91 минута<br>
+						Комедия
+					</div>
+					<div class="legend">
+						<span class="label ps-btn x"><i></i>Смотреть</span>
+						<span class="label ps-btn square"><i></i>Инфо</span>
+					</div>
+				</div>
+
+				<div class="one clearChlds">
+					<div class="image">
+						<img src="img/content/img-1.jpg" alt="">
+					</div>
+					<div class="text">
+						Мама, не горюй<br>
+						91 минута<br>
+						Ужасы
+					</div>
+					<div class="legend">
+						<span class="label ps-btn x"><i></i>Смотреть</span>
+						<span class="label ps-btn square"><i></i>Инфо</span>
+					</div>
+				</div>
+
+
+
+				<span class="down icon"></span>
+			</div> <!-- .video-items -->
+
+		</div> <!-- #main -->
+		<div id="right" class="container viewcontainer"></div>
+		<div id="dialog" class="container viewcontainer"></div>
+
+	</div> <!-- container viewcontainer view list horizontallist -->
+</div> <!-- .container_main -->
+</body>
+</html>

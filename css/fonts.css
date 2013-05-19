@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'tvigle-bold';
+    src: url('../fonts/tvigle-bold.eot');
+    src: url('../fonts/../fonts/tvigle-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tvigle-bold.woff') format('woff'),
+         url('../fonts/tvigle-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tvigle-regular';
+    src: url('../fonts/tvigle-regular.eot');
+    src: url('../fonts/tvigle-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tvigle-regular.woff') format('woff'),
+         url('../fonts/tvigle-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
