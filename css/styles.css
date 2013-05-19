@@ -72,6 +72,65 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 	background: #000 url('../img/bg.png') repeat-x 0 0;
 }
 
+.top-menu {
+	position: relative;
+	height: 100px;
+	background: url('../img/bg-silk.jpg') #373737;
+	overflow: hidden;
+	text-align: center;
+	}
+	.top-menu .shade {
+		position: relative;
+		height: 100px;
+		background: transparent url('../img/sprite.png') repeat-x 0 -300px;
+	}
+	.top-menu .one {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 26px 20px 0 20px;
+	}
+	.top-menu .one > div {
+		padding: 10px;
+		height: 35px;
+		line-height: 35px;
+		display: inline-block;
+		vertical-align: middle;
+		-webkit-border-radius: 10px;   
+	    		border-radius: 10px;	    
+	}
+	.top-menu .one img {
+		display: inline-block;
+		vertical-align: middle;
+		margin-bottom: -4px;
+	}
+
+	.top-menu .one.active > div {
+		background: transparent url('../img/sprite.png') repeat-x 0 -400px;
+	    -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+                box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+	}
+
+	.top-menu .one.focus > div,
+	.top-menu .one:hover > div {
+		border: 3px solid #FE8000;
+		padding: 7px;
+		background: transparent;
+		-webkit-box-shadow: none;
+                box-shadow: none;
+	}
+
+	.top-menu .one.icon > div {
+		padding: 5px 6px 6px 6px;
+		height: 44px;
+		}
+		.top-menu .one.icon.focus > div ,
+		.top-menu .one.icon.hover > div {
+			padding: 2px 3px 3px 3px;
+		}
+		.top-menu .one.icon span {
+			display: inline-block;
+		}
+
 .header {
 	height: 165px;
 	}
@@ -84,6 +143,7 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 .header-inner { 
 	height: 70px;
 	background: transparent url('../img/sprite.png') repeat-x 0 -192px;
+	position: relative;
 	}
 	.header-inner .logo-box {
 			position: absolute;
@@ -515,6 +575,22 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 	width: 30px;
 	height: 30px;
 	background: transparent url('../img/sprite.png') no-repeat -62px 0;
+}
+.icon.search.big {
+	width: 44px;
+	height: 44px;
+	background: transparent url('../img/sprite.png') no-repeat -493px 0;
+}
+.icon.list.big {
+	width: 44px;
+	height: 44px;
+	background: transparent url('../img/sprite.png') no-repeat -493px -44px;
+}
+.icon.focus .icon.search.big {
+	background: transparent url('../img/sprite.png') no-repeat -537px 0;
+}
+.icon.focus .icon.list.big {
+	background: transparent url('../img/sprite.png') no-repeat -537px -44px;
 }
 
 .ps-btn {
