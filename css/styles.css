@@ -119,6 +119,49 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 			display: inline-block;
 			margin: 0 5px;
 		}
+		.header-inner .btns-set .search-field {
+			display: inline-block;
+			padding: 7px;
+			border: 3px solid transparent;
+			-webkit-border-radius: 11px;   
+				    border-radius: 11px;
+		}
+		.header-inner .btns-set .search-field.focus {
+			border-color: #FE8000;
+		}
+		.header-inner .btns-set .search-field .bg {
+			width: 598px;
+			height: 25px;
+			padding: 8px 1px 0px 1px;
+			background: transparent url('../img/sprite.png') no-repeat 0 -263px;
+			display: inline-block;
+		}
+		.header-inner .btns-set .search-field  input {
+			width: 562px;
+			height: 24px;
+			padding: 0px 18px 0px 18px;
+			color: #444444;
+			font-size: 24px;
+			border: 0;
+			background: transparent;
+		}
+		.header-inner .btns-set .search-field input:focus {
+			outline: none;
+		}
+
+		.search-field ::-webkit-input-placeholder { /* WebKit browsers */
+		    color:    #bababa;
+		}
+		.search-field :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		    color:    #bababa;
+		}
+		.search-field ::-moz-placeholder { /* Mozilla Firefox 19+ */
+		    color:    #bababa;
+		}
+		.search-field :-ms-input-placeholder { /* Internet Explorer 10+ */
+		    color:    #bababa;
+		}
+
 
 .collection-title-box {
 	font-size: 16px;
@@ -422,6 +465,36 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 		display: block;
 	}
 
+.video-items.search-results {
+	margin-top: 16px;
+	height: 620px;
+	}	
+	.video-items.search-results .icon.up {
+		display: block;
+		top:5px;
+	}
+
+.video-items.search-results.empty {
+	background: url('../img/search.png') no-repeat center 130px;
+	}
+	.video-items.search-results.empty .icon {
+		display: none;
+	}
+
+.video-items.search-results .nr-text { display: none; }
+.video-items.search-results.no-results {
+
+	}
+	.video-items.search-results.no-results .icon {
+		display: none;
+	}
+	.video-items.search-results.no-results .nr-text {
+		display: block;
+		font-size: 32px;
+		line-height: 1.2em;
+		color: #888888;
+		padding-top: 225px;
+	}
 
 .icon.next.shaded { 
 	width: 60px;
