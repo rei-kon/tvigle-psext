@@ -222,6 +222,15 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 		    color:    #bababa;
 		}
 
+		.header-inner .title-box {
+			position: relative;
+			padding: 22px 0 0 0;
+			text-align: center;
+			font-size: 24px;
+			line-height: 1.4em;
+			color: #dddddd;
+		}
+
 
 .collection-title-box {
 	font-size: 16px;
@@ -556,6 +565,45 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 		padding-top: 225px;
 	}
 
+.catalog-items {
+	height: 650px;
+	position: relative;
+	text-align: center;
+	}
+	.catalog-items .col {
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		padding: 0 20px;
+	}
+	.catalog-items .btn {
+		margin-top: 10px;
+
+	}
+	.catalog-items .btn > span {
+		font-size: 24px;
+		line-height: 40px;
+	}
+	.catalog-items .one {
+		display: inline-block;
+		vertical-align: top;
+		padding-left: 16px;
+	}
+	.catalog-items .one > span {
+		display: inline-block;
+		padding: 7px 10px 0 10px;
+		font-family: 'tvigle-regular', Arial, Helvetica, sans-serif;
+		font-size: 24px;
+		line-height: 1.2em;
+		border: 3px solid transparent;		
+		-webkit-border-radius: 10px;   
+				border-radius: 10px;
+	}
+	.catalog-items .one:hover > span,
+	.catalog-items .one.focus > span {
+		border-color: #fe8000;
+	}
+
 .icon.next.shaded { 
 	width: 60px;
 	height: 60px;
@@ -679,11 +727,14 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 		background: transparent url('../img/sprite.png') no-repeat -153px -50px;
 	}
 
-	.btn.focus {
+	.btn.focus,
+	.btn:hover {
 		border-color: #fe8000;
 	}
+
 	.btn.focus > span,
-	.btn.active > span {
+	.btn.active > span,
+	.btn:hover > span {
 		background-position: center -124px;
 		color: #fe8000;
 	}
