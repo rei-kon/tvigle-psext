@@ -125,8 +125,8 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 	line-height: 1.4em;
 	text-align: center;
 	color: #ededed;
-	padding-top: 10px;
-	height: 36px;
+	padding-top: 15px;
+	height: 31px;
 	}
 	.collection-title-box .name {
 		font-size: 24px;
@@ -237,8 +237,9 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 			text-align: center;
 			font-size: 16px;
 			line-height: 1.4em;
-			padding: 20px 75px 0 75px;
-			height: 87px;
+			padding: 23px 75px 0 75px;
+			height: 85px;
+			overflow: hidden;
 		}
 		.slider .info-box .cover {
 
@@ -334,7 +335,7 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 .video-items { 
 	position: relative;
 	height: 300px;
-	padding-top: 15px;
+	padding-top: 14px;
 	text-align: center;
 	}
 	.video-items .icon.down {
@@ -343,14 +344,20 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 		bottom: 30px;
 		right: 30px;
 	}
+	.video-items .icon.up {
+		position: absolute;
+		display: none;
+		top: -15px;
+		right: 30px;
+	}
 	.video-items .one,
 	.info-box .one-sm {
 		width: 394px;
 		height: 124px;
 		position: relative;
-		margin: 0 0 10px 0;
+		margin: 0 0 12px 0;
 		display: inline-block;
-		border: 4px solid transparent;
+		border: 3px solid transparent;
 		-webkit-border-radius: 10px;   
 				border-radius: 10px;
 		}
@@ -404,6 +411,14 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 	.video-items .one:hover .legend,
 	.info-box .one-sm.focus .legend,
 	.info-box .one-sm:hover .legend {
+		display: block;
+	}
+
+.video-items.expanded {
+	margin-top: -10px;
+	height: 600px;
+	}	
+	.video-items.expanded .icon.up {
 		display: block;
 	}
 
