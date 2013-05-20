@@ -71,6 +71,9 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 	overflow: hidden;
 	background: #000 url('../img/bg.png') repeat-x 0 0;
 }
+.container_main.nobg {
+	background: none;
+}
 
 .top-menu {
 	position: relative;
@@ -229,6 +232,11 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 			font-size: 24px;
 			line-height: 1.4em;
 			color: #dddddd;
+		}
+
+		.header-inner .title-box span.small {
+			font-size: 16px;
+			margin: 0 25px;
 		}
 
 
@@ -565,6 +573,20 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 		padding-top: 225px;
 	}
 
+.video-items.column {
+	width: 450px;
+	height: 620px;
+	position: absolute;
+	top: 70px;
+	right: 0;
+	background: url('../img/bg.png') repeat-x 0 -70px #000;
+	padding-top: 30px;
+	}
+	.video-items.column .icon.up {
+		display: block;
+		top:30px;
+	}
+
 .catalog-items {
 	height: 650px;
 	position: relative;
@@ -604,6 +626,222 @@ a.noOutline:active, a.noOutline:link, a.noOutline:focus, a.noOutline:hover { out
 		border-color: #fe8000;
 	}
 
+.player-box {
+	position: relative;
+	width: 830px;
+	}
+	.player-box .top {
+		height: 40px;
+		background: url('../img/bg.png') repeat-x 0 -70px;
+	}
+	.player-box .side {		
+		height: 405px;
+		float: left;
+		background: url('../img/bg.png') repeat-x 0 -110px #000;
+	}
+	.player-box .left {
+		width: 40px;
+	}
+	.player-box .right {
+		width: 70px;
+	}
+	.player-box .player {
+		float: left;
+		width: 720px;
+		height: 405px;
+		overflow: hidden;
+	}
+	.player-box .controls {
+		background: #000;
+		height: 205px;
+		overflow: hidden;
+	}
+
+	.player-btns { 
+		position: relative;
+		margin-top: 10px;
+		}
+		.player-btns .bar {
+			position: absolute;
+			top:0;
+			left: 167px;
+			width: 487px;
+			height: 36px;
+			background: transparent url('../img/sprite.png') repeat-x 0 -492px;
+			overflow: hidden;
+			}
+			.player-btns .seek-box {
+				position: absolute;
+				height: 36px;
+				top: 0;
+				left: 0;
+			}
+			.player-btns .seek-bar {
+				position: relative;
+				height: 36px;
+				background: transparent url('../img/sprite.png') repeat-x 0 -528px;
+				border-right: 1px solid #fba13a;
+				border-left: 1px solid #fba13a;
+			}
+			.player-btns .seek-bar i {
+				display: block;
+				width: 5px;
+				height: 36px;
+				background: transparent url('../img/sprite.png') repeat-x -120px -46px;
+				position: absolute;
+				top:0;
+				right: -6px;
+			}
+			.player-btns .time {
+				font-size: 14px;
+				line-height: 1.4em;
+				position: absolute;
+				color: #ffffff;
+				top:11px;
+				text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.75);
+			}
+			.player-btns .time.current {
+				left: 10px;
+			}
+			.player-btns .time.total {
+				right: 10px;
+			}
+
+			.plr-btn {
+				display: block;
+				height: 36px;
+				position: absolute;	
+				top:0;
+				background: transparent url('../img/sprite.png') repeat-x center -456px;
+				text-align: center;
+				-webkit-border-radius: 10px;
+						border-radius: 10px;
+				}
+				.plr-btn i {
+					position: relative;
+					top:11px;
+					top:8px;
+					display: inline-block;
+					height: 14px;
+					background: transparent url('../img/sprite.png') no-repeat;
+				}
+				.plr-btn > div {
+					border: 3px solid transparent;
+					height: 30px;
+				-webkit-border-radius: 10px;
+						border-radius: 10px;
+				}
+				.plr-btn:hover > div,
+				.plr-btn.focus > div {
+					border-color: #fe8000;
+				}
+
+			.plr-btn.play {
+				left: 40px;
+				width: 60px;
+				}
+				.plr-btn.play i {
+					background-position: -170px -32px;
+					width: 10px;
+				}
+				.plr-btn.play:hover i,
+				.plr-btn.play.focus i {
+					background-position: -170px -46px;
+				}
+
+			.plr-btn.fullscreen {
+				left: 720px;
+				width: 40px;
+				}
+				.plr-btn.fullscreen i {
+					background-position: -225px -32px;
+					width: 12px;
+				}
+				.plr-btn.fullscreen:hover i,
+				.plr-btn.fullscreen.focus i {
+					background-position: -225px -46px;
+				}
+
+			.plr-btn.back,
+			.plr-btn.back > div {
+				-webkit-border-radius: 10px 0px 0px 10px;
+    					border-radius: 10px 0px 0px 10px;	
+			}	
+			.plr-btn.back {
+				left: 110px;
+				width: 57px;
+							
+				}
+				.plr-btn.back i {
+					background-position: -203px -32px;
+					width: 21px;
+				}
+				.plr-btn.back:hover i,
+				.plr-btn.back.focus i {
+					background-position: -203px -46px;
+				}
+
+			.plr-btn.next,
+			.plr-btn.next > div {
+				-webkit-border-radius: 0px 10px 10px 0px;
+    					border-radius: 0px 10px 10px 0px;	
+			}
+			.plr-btn.next {
+				left: 654px;
+				width: 57px;
+							
+				}
+				.plr-btn.next i {
+					background-position: -181px -32px;
+					width: 21px;
+				}
+				.plr-btn.next:hover i,
+				.plr-btn.next.focus i {
+					background-position: -181px -46px;
+				}
+	
+	.player-text {
+		position: relative;
+		top: 70px;
+		}
+		.player-text .title {
+			font-size: 24px;
+			line-height: 1.4em;
+			padding: 0 70px 0 40px;
+			height: 34px;
+			overflow: hidden;
+			white-space: nowrap;
+			-o-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+
+		}
+		.player-text .btns-set {
+			padding: 6px 0 0 30px;
+		}
+
+.player-box.full-text {
+	background: url('../img/bg.png') repeat-x 0 -70px #000;
+	height: 650px;
+	}
+	.player-box.full-text .top {
+		display: none;
+	}
+	.player-box.full-text .controls {
+		background: none;
+		height: 607px;
+		padding-top: 43px;
+	}
+	.player-box.full-text .player-text {
+		top:0;
+	}
+	.player-box.full-text .txt {
+		font-size: 18px;
+		line-height: 1.4em;
+		width: 725px;
+		padding: 22px 0 0 40px;
+	}
+
+	
 .icon.next.shaded { 
 	width: 60px;
 	height: 60px;
